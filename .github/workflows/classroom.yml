@@ -27,7 +27,7 @@ jobs:
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: t2
-        setup-command: cd atm && npm run ci
+        setup-command: cd atm && npm ci
         command: cd atm && npm run test:cov
         timeout: 10
         max-score: 2

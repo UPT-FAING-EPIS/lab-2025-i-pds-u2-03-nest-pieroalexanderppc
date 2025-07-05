@@ -1,0 +1,87 @@
+name: Build, Test and Publish Packages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-test-publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+        registry-url: 'https://npm.pkg.github.com/'
+
+    # ATM
+    - name: Install ATM dependencies
+      working-directory: atm
+      run: npm install
+
+    - name: Fix jest permissions ATM
+      working-directory: atm
+      run: chmod +x ./node_modules/.bin/jest || true
+
+    - name: Run ATM tests
+      working-directory: atm
+      run: ./node_modules/.bin/jest --coverage || npx jest --coverage
+
+    - name: Pack ATM module
+      working-directory: atm
+      run: |
+        npm pack
+        mv *.tgz ../atm-latest.tgz
+
+    - name: Publish ATM package
+      working-directory: atm
+      run: |
+        npm version patch
+        npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    # PAYMENT
+    - name: Install Payment dependencies
+      working-directory: payment
+      run: npm install
+
+    - name: Fix jest permissions Payment
+      working-directory: payment
+      run: chmod +x ./node_modules/.bin/jest || true
+
+    - name: Run Payment tests
+      working-directory: payment
+      run: ./node_modules/.bin/jest --coverage || npx jest --coverage
+
+    - name: Pack Payment module
+      working-directory: payment
+      run: |
+        npm pack
+        mv *.tgz ../payment-latest.tgz
+
+    - name: Publish Payment package
+      working-directory: payment
+      run: |
+        npm version patch
+        npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    # Subida de artefactos .tgz
+    - name: Upload .tgz artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: npm-packages
+        path: |
+          atm-latest.tgz
+          payment-latest.tgz

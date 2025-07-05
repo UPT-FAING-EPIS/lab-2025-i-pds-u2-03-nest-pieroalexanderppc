@@ -1,0 +1,209 @@
+<svg version="1.1" baseProfile="full" width="1112.0" height="353.0" viewBox="0 0 1112 353" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+<desc >#.interface: fill=lightblue
+#.enumeration: fill=lightgreen
+#.type: fill=lightgray
+
+[Account|+MAX_INPUT_AMOUNT: number;+AccountNumber: number;+AccountBalance: number|+Withdraw(): void;+Deposit(): void]
+[ATM|+_command: ICommand|+Action(): void]
+[DepositCommand|+_account: Account;+_amount: number|+Execute(): void]
+[ICommand]&lt;:--[DepositCommand]
+[DomainModule||]
+[DomainService||]
+[&lt;interface&gt;ICommand||+Execute(): void]
+[WithdrawCommand|+_account: Account;+_amount: number|+Execute(): void]
+[ICommand]&lt;:--[WithdrawCommand]</desc>
+<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="normal" font-style="normal">
+<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+<g stroke="transparent" fill="transparent">
+<rect x="0.0" y="0.0" height="353.0" width="1112.0" stroke="none"></rect>
+</g>
+<g transform="translate(8, 8)" fill="#33322E">
+<g transform="translate(20, 20)" fill="#eee8d5" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+<g stroke-dasharray="6 6">
+<path d="M583.0 117.2 L528 165 L528 185 L528.0 185.0 " fill="none"></path>
+</g>
+<path d="M586.5 121.3 L583.0 117.2 L579.5 113.2 L593.1 108.5 Z"></path>
+<g stroke-dasharray="6 6">
+<path d="M686.0 117.2 L741 165 L741 185 L741.0 185.0 " fill="none"></path>
+</g>
+<path d="M689.5 113.2 L686.0 117.2 L682.5 121.3 L675.9 108.5 Z"></path>
+<g data-name="Account">
+<g fill="#eee8d5" stroke="#33322E" data-name="Account">
+<rect x="0.0" y="0.0" height="145.0" width="274.0" data-name="Account"></rect>
+<path d="M0.0 32.0 L274.0 32.0" fill="none" data-name="Account"></path>
+<path d="M0.0 97.0 L274.0 97.0" fill="none" data-name="Account"></path>
+</g>
+<g transform="translate(0, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Account" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Account" data-compartment="0">
+<a id="libs\domain\src\account.ts.Account" xlink:href="libs\domain\src\account.ts"><text x="129.0" y="14.1" stroke="none" text-anchor="middle" data-name="Account" data-compartment="0">Account</text></a>
+
+</g>
+</g>
+<g transform="translate(0, 32)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Account" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Account" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Account" data-compartment="1">+MAX_INPUT_AMOUNT: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Account" data-compartment="1">+AccountNumber: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Account" data-compartment="1">+AccountBalance: number</text>
+
+</g>
+</g>
+<g transform="translate(0, 97)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Account" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Account" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="Account" data-compartment="2">+Withdraw(): void</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Account" data-compartment="2">+Deposit(): void</text>
+
+</g>
+</g>
+</g>
+<g data-name="ATM">
+<g fill="#eee8d5" stroke="#33322E" data-name="ATM">
+<rect x="314.0" y="24.5" height="96.0" width="208.0" data-name="ATM"></rect>
+<path d="M314.0 56.5 L522.0 56.5" fill="none" data-name="ATM"></path>
+<path d="M314.0 88.5 L522.0 88.5" fill="none" data-name="ATM"></path>
+</g>
+<g transform="translate(314, 24.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ATM" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ATM" data-compartment="0">
+<a id="libs\domain\src\atm.ts.ATM" xlink:href="libs\domain\src\atm.ts"><text x="96.0" y="14.1" stroke="none" text-anchor="middle" data-name="ATM" data-compartment="0">ATM</text></a>
+
+</g>
+</g>
+<g transform="translate(314, 56.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ATM" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ATM" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ATM" data-compartment="1">+_command: ICommand</text>
+
+</g>
+</g>
+<g transform="translate(314, 88.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ATM" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ATM" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="ATM" data-compartment="2">+Action(): void</text>
+
+</g>
+</g>
+</g>
+<g data-name="DepositCommand">
+<g fill="#eee8d5" stroke="#33322E" data-name="DepositCommand">
+<rect x="441.5" y="185.0" height="112.0" width="173.0" data-name="DepositCommand"></rect>
+<path d="M441.5 217.0 L614.5 217.0" fill="none" data-name="DepositCommand"></path>
+<path d="M441.5 265.0 L614.5 265.0" fill="none" data-name="DepositCommand"></path>
+</g>
+<g transform="translate(441.5, 185)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="DepositCommand" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="DepositCommand" data-compartment="0">
+<a id="libs\domain\src\deposit-command.ts.DepositCommand" xlink:href="libs\domain\src\deposit-command.ts"><text x="78.5" y="14.1" stroke="none" text-anchor="middle" data-name="DepositCommand" data-compartment="0">DepositCommand</text></a>
+
+</g>
+</g>
+<g transform="translate(441.5, 217)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="DepositCommand" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="DepositCommand" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="DepositCommand" data-compartment="1">+_account: Account</text>
+<text x="0.0" y="30.3" stroke="none" data-name="DepositCommand" data-compartment="1">+_amount: number</text>
+
+</g>
+</g>
+<g transform="translate(441.5, 265)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="DepositCommand" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="DepositCommand" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="DepositCommand" data-compartment="2">+Execute(): void</text>
+
+</g>
+</g>
+</g>
+<g data-name="ICommand">
+<g fill="lightblue" stroke="#33322E" data-name="ICommand">
+<rect x="562.0" y="36.5" height="72.0" width="145.0" data-name="ICommand"></rect>
+<path d="M562.0 68.5 L707.0 68.5" fill="none" data-name="ICommand"></path>
+<path d="M562.0 76.5 L707.0 76.5" fill="none" data-name="ICommand"></path>
+</g>
+<g transform="translate(562, 36.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ICommand" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ICommand" data-compartment="0">
+<a id="libs\domain\src\icommand.interface.ts.ICommand" xlink:href="libs\domain\src\icommand.interface.ts"><text x="64.5" y="14.1" stroke="none" text-anchor="middle" data-name="ICommand" data-compartment="0">ICommand</text></a>
+
+</g>
+</g>
+<g transform="translate(562, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ICommand" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ICommand" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(562, 76.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ICommand" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ICommand" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="ICommand" data-compartment="2">+Execute(): void</text>
+
+</g>
+</g>
+</g>
+<g data-name="DomainModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="DomainModule">
+<rect x="747.0" y="48.5" height="48.0" width="134.0" data-name="DomainModule"></rect>
+<path d="M747.0 80.5 L881.0 80.5" fill="none" data-name="DomainModule"></path>
+<path d="M747.0 88.5 L881.0 88.5" fill="none" data-name="DomainModule"></path>
+</g>
+<g transform="translate(747, 48.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="DomainModule" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="DomainModule" data-compartment="0">
+<a id="libs\domain\src\domain.module.ts.DomainModule" xlink:href="libs\domain\src\domain.module.ts"><text x="59.0" y="14.1" stroke="none" text-anchor="middle" data-name="DomainModule" data-compartment="0">DomainModule</text></a>
+
+</g>
+</g>
+<g transform="translate(747, 80.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="DomainModule" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="DomainModule" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(747, 88.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="DomainModule" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="DomainModule" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="DomainService">
+<g fill="#eee8d5" stroke="#33322E" data-name="DomainService">
+<rect x="921.0" y="48.5" height="48.0" width="135.0" data-name="DomainService"></rect>
+<path d="M921.0 80.5 L1056.0 80.5" fill="none" data-name="DomainService"></path>
+<path d="M921.0 88.5 L1056.0 88.5" fill="none" data-name="DomainService"></path>
+</g>
+<g transform="translate(921, 48.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="DomainService" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="DomainService" data-compartment="0">
+<a id="libs\domain\src\domain.service.ts.DomainService" xlink:href="libs\domain\src\domain.service.ts"><text x="59.5" y="14.1" stroke="none" text-anchor="middle" data-name="DomainService" data-compartment="0">DomainService</text></a>
+
+</g>
+</g>
+<g transform="translate(921, 80.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="DomainService" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="DomainService" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(921, 88.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="DomainService" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="DomainService" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="WithdrawCommand">
+<g fill="#eee8d5" stroke="#33322E" data-name="WithdrawCommand">
+<rect x="654.5" y="185.0" height="112.0" width="173.0" data-name="WithdrawCommand"></rect>
+<path d="M654.5 217.0 L827.5 217.0" fill="none" data-name="WithdrawCommand"></path>
+<path d="M654.5 265.0 L827.5 265.0" fill="none" data-name="WithdrawCommand"></path>
+</g>
+<g transform="translate(654.5, 185)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WithdrawCommand" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WithdrawCommand" data-compartment="0">
+<a id="libs\domain\src\withdraw-command.ts.WithdrawCommand" xlink:href="libs\domain\src\withdraw-command.ts"><text x="78.5" y="14.1" stroke="none" text-anchor="middle" data-name="WithdrawCommand" data-compartment="0">WithdrawCommand</text></a>
+
+</g>
+</g>
+<g transform="translate(654.5, 217)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WithdrawCommand" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WithdrawCommand" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="WithdrawCommand" data-compartment="1">+_account: Account</text>
+<text x="0.0" y="30.3" stroke="none" data-name="WithdrawCommand" data-compartment="1">+_amount: number</text>
+
+</g>
+</g>
+<g transform="translate(654.5, 265)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WithdrawCommand" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WithdrawCommand" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="WithdrawCommand" data-compartment="2">+Execute(): void</text>
+
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

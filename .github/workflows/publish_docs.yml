@@ -1,0 +1,44 @@
+name: Publish Documentation
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  generate-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Install dependencies for ATM
+      run: |
+        cd atm
+        npm install
+
+    - name: Install dependencies for Payment
+      run: |
+        cd payment
+        npm install
+
+    - name: Generate documentation with Compodoc for ATM
+      run: |
+        cd atm
+        npx @compodoc/compodoc -p tsconfig.json -d ../documentation
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./documentation
+        publish_branch: gh-pages
