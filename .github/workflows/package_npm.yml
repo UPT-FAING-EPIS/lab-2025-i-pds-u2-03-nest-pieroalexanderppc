@@ -42,14 +42,6 @@ jobs:
         npm pack
         mv *.tgz ../atm-latest.tgz
 
-    - name: Publish ATM package
-      working-directory: atm
-      run: |
-        npm version patch
-        npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     # PAYMENT
     - name: Install Payment dependencies
       working-directory: payment
