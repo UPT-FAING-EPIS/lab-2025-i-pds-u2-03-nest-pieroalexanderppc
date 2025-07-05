@@ -61,13 +61,6 @@ jobs:
         npm pack
         mv *.tgz ../payment-latest.tgz
 
-    - name: Publish Payment package
-      working-directory: payment
-      run: |
-        npm version patch
-        npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     # Subida de artefactos .tgz
     - name: Upload .tgz artifacts
